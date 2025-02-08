@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Terisolir - SpeedNet</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-100 flex flex-col">
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center justify-center">
+            <div class="text-center max-w-2xl mx-auto">
+                <!-- Icon -->
+                <div class="mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mx-auto text-error" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+                        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+                        <path d="M10.71 5.05A16 16 0 0 1 22.58 9"/>
+                        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                        <line x1="12" y1="20" x2="12" y2="20"/>
+                    </svg>
+                </div>
+                
+                <h1 class="text-4xl font-bold text-error mb-6">INTERNET TERISOLIR</h1>
+                
+                <img 
+                    src="/src/image.jpg" 
+                    alt="Internet Terisolir Illustration" 
+                    class="w-64 h-64 mx-auto mb-6 rounded-lg shadow-lg"
+                />
+                
+                <p class="text-lg mb-8 text-gray-700">
+                    Pelanggan Yth,<br>
+                    Kami informasikan bahwa saat ini layanan internet Anda sedang <b>TERISOLIR</b> dikarenakan belum melakukan pembayaran tagihan bulanan.<br>
+                    Mohon lakukan pembayaran maksimal tanggal 5 setiap bulannya.
+                </p>
+                
+                <button 
+                    class="btn btn-primary btn-lg"
+                    onclick="document.getElementById('payment-modal').showModal()"
+                >
+                    Lakukan Pembayaran
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer footer-center bg-base-300 text-base-content p-4">
+            <aside>
+              <p>Copyright © <span id="currentYear"></span> - All right reserved by SpeedNet ISP</p>
+            </aside>
+          </footer>
+
+        <!-- Payment Modal -->
+        <dialog id="payment-modal" class="modal">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg mb-4">Metode Pembayaran</h3>
+                
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="3" rx="2"/>
+                            <path d="M3 9h18"/>
+                        </svg>
+                        <h4 class="font-semibold">QRIS</h4>
+                    </div>
+                    <img 
+                        src="/src/qris.png" 
+                        alt="QRIS Code" 
+                        class="w-48 h-48 mx-auto mb-4"
+                    />
+                </div>
+
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2"/>
+                            <line x1="2" x2="22" y1="10" y2="10"/>
+                        </svg>
+                        <h4 class="font-semibold">Transfer Bank</h4>
+                    </div>
+                    <div class="bg-base-200 p-4 rounded-lg">
+                        <p class="mb-1"><strong>No Rekening:</strong> 11223344</p>
+                        <p class="mb-1"><strong>Nama Bank:</strong> BCA</p>
+                        <p><strong>Nama Penerima:</strong> PT. XYZ</p>
+                    </div>
+                </div>
+
+                <div class="modal-action">
+                    <button 
+                        class="btn"
+                        onclick="document.getElementById('payment-modal').close()"
+                    >
+                        Tutup
+                    </button>
+                </div>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+    </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Terisolir - SpeedNet</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-100 flex gap-4 flex-col">
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center justify-center">
+            <div class="text-center max-w-2xl mx-auto">
+                <!-- Icon -->
+                <div class="mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mx-auto text-error" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+                        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+                        <path d="M10.71 5.05A16 16 0 0 1 22.58 9"/>
+                        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                        <line x1="12" y1="20" x2="12" y2="20"/>
+                    </svg>
+                </div> 
+                <h1 class="text-4xl font-bold text-error mb-6">INTERNET TERISOLIR</h1>
+                <img src="/src/image.jpg" alt="Internet Terisolir Illustration" class="w-80 h-100 mx-auto mb-6 rounded-lg shadow-lg" />
+                <p class="text-lg mb-8 text-gray-700">
+                    Pelanggan Yth,<br>
+                    Kami informasikan bahwa saat ini layanan internet Anda sedang <b>TERISOLIR</b> dikarenakan belum melakukan pembayaran tagihan bulanan.<br>
+                    Mohon lakukan pembayaran maksimal tanggal 5 setiap bulannya.
+                </p>
+            </div>
+            <div class="flex-non gap-4">
+                <button class="btn btn-primary btn-lg" onclick="paymentModal.showModal()">
+                    Lakukan Pembayaran
+                </button>
+            </div>
+                
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer footer-center bg-base-300 text-base-content p-4">
+            <aside>
+                <p>Made with ❤️ by <a href="https://github.com/ghoway" target="_blank">Wahyu Hidayatullah</a></p>
+            </aside>
+          </footer>
+          
+        <!-- Payment Modal -->
+        <dialog id="paymentModal" class="modal">
+            <div class="modal-box ">
+                <h3 class="font-bold text-lg mb-4">Metode Pembayaran</h3>
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="3" rx="2"/>
+                            <path d="M3 9h18"/>
+                        </svg>
+                        <h4 class="font-semibold">QRIS</h4>
+                    </div>
+                    <img 
+                        src="/src/qris.png" 
+                        alt="QRIS Code" 
+                        class="w-48 h-48 mx-auto mb-4"
+                    />
+                </div>
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2"/>
+                            <line x1="2" x2="22" y1="10" y2="10"/>
+                        </svg>
+                        <h4 class="font-semibold">Transfer Bank</h4>
+                    </div>
+                    <div class="bg-base-200 p-4 rounded-lg">
+                        <div class="overflow-x-auto text-center">
+                            <table class="table table-xs mx-auto">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Bank</th>
+                                        <th>Nama Penerima</th>
+                                        <th>Nomor Rekening</th>
+                                        <th>Salin</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- row 1 -->
+                                    <tr>
+                                        <th>BCA</th>
+                                        <td>PT. XYZ</td>
+                                        <td id="rekeningBCA">123456</td>
+                                        <td>
+                                            <button class="btn btn-sm" onclick="copyToClipboard('rekeningBCA')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-2 4h2a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h2m4 0V3m-4 8v10" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- row 2 -->
+                                    <tr>
+                                        <th>BNI</th>
+                                        <td>PT. XYZ</td>
+                                        <td id="rekeningBNI">123456</td>
+                                        <td>
+                                            <button class="btn btn-sm" onclick="copyToClipboard('rekeningBNI')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-2 4h2a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h2m4 0V3m-4 8v10" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- row 3 -->
+                                    <tr>
+                                        <th>BRI</th>
+                                        <td>PT. XYZ</td>
+                                        <td id="rekeningBRI">123456</td>
+                                        <td>
+                                            <button class="btn btn-sm" onclick="copyToClipboard('rekeningBRI')">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-2 4h2a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h2m4 0V3m-4 8v10" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <script>
+                            function copyToClipboard(elementId) {
+                                var copyText = document.getElementById(elementId).innerText;
+                                navigator.clipboard.writeText(copyText).then(function() {
+                                    alert('Nomor rekening berhasil disalin: ' + copyText);
+                                }, function(err) {
+                                    alert('Gagal menyalin teks: ', err);
+                                });
+                            }
+                        </script></svg>
+                    </div>
+
+                    <p class="py-4 text-center">Setelah melakukan pembayaran, silahkan konfirmasi ke nomor WhatsApp Admin <a href="http://wa.me/628123456789" target="_blank"><b>0812345689</b></a></p>
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn">Close</button>
+                    </form>
+                  </div>
+            </div>
+        </dialog>
+    </div>
+</body>
+</html>
