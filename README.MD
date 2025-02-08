@@ -12,7 +12,7 @@ To get started with this project, follow these steps:
    ```
 2. Navigate to the project directory.
    ```bash
-   cd mikrotik-isolation-page
+   cd RTRWNet-page
    ```
 3. Install the necessary dependencies by running:
    ```bash
